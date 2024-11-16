@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Exercise</title>
+  </head>
+  <body>
+    <h1>Welcome to only murders in the building!</h1>
+    <div id="app">
+      <div v-if="listOfCharacters.length  === 0">
+        <h1>No Characters to display</h1>
+      </div>
+      <div v-else>
+        <h1>Characters Of The Show</h1>
+        <ul v-for="item in listOfCharacters">
+          <li>{{item.name}} - {{item.actor}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+
+      const app = createApp({
+        data() {
+          return {
+            listOfCharacters: [
+              {
+                name: "Charles-Haden Savage",
+                actor: "Steve Martin",
+                role: "Retired Actor",
+                traits: ["Sarcastic", "Loyal", "Organized"],
+                image: "https://example.com/images/charles.jpg",
+                bio: "Charles is a former TV actor best known for his role as Brazzos. He is meticulous and loves his quiet routines.",
+              },
+              {
+                name: "Oliver Putnam",
+                actor: "Martin Short",
+                role: "Theater Director",
+                traits: ["Eccentric", "Optimistic", "Creative"],
+                image: "https://example.com/images/oliver.jpg",
+                bio: "Oliver is a struggling theater director with a flair for the dramatic. He dreams of producing a hit podcast.",
+              },
+              {
+                name: "Mabel Mora",
+                actor: "Selena Gomez",
+                role: "Artist",
+                traits: ["Witty", "Determined", "Mysterious"],
+                image: "https://example.com/images/mabel.jpg",
+                bio: "Mabel is an independent artist with a knack for solving mysteries. She has a personal connection to the case.",
+              },
+              {
+                name: "Teddy Dimas",
+                actor: "Nathan Lane",
+                role: "Sponsor",
+                traits: ["Wealthy", "Shady", "Charming"],
+                image: "https://example.com/images/teddy.jpg",
+                bio: "Teddy is a wealthy deli owner who sponsors the podcast, though his motives may not be entirely innocent.",
+              },
+              {
+                name: "Jan Bellows",
+                actor: "Amy Ryan",
+                role: "Bassoonist",
+                traits: ["Charming", "Deceptive", "Passionate"],
+                image: "https://example.com/images/jan.jpg",
+                bio: "Jan is a bassoonist who becomes involved with Charles. Her cheerful demeanor hides a dark secret.",
+              },
+            ],
+          };
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
